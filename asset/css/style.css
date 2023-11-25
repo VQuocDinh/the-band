@@ -51,7 +51,7 @@ html {
 
 .col-haft {
     width: 50%;
- }
+}
 
 .col-third {
     float: left;
@@ -67,28 +67,32 @@ html {
 
 /* Main */
 #header {
-    min-height: 46px;
+    height: 46px;
     background-color: #000;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1;
+    overflow: hidden;
+
 }
 
 #nav {
-    display: inline;
+    display: inline-block;
 }
 
-#nav > li {
+#nav>li {
     display: inline-block;
     position: relative;
+    z-index: 1000;
+
 }
 
 #nav li:hover .subnav {
     display: block;
 }
 
-#nav > li > a {
+#nav>li>a {
     color: #fff;
 }
 
@@ -98,8 +102,9 @@ html {
     line-height: 46px;
     display: block;
 }
+
 #nav .subnav li:hover,
-#nav > li:hover > a {
+#nav>li:hover>a {
     color: #000;
     background-color: #ccc;
 }
@@ -127,11 +132,28 @@ html {
     font-size: 14px;
 }
 
+.menu-mobile {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+
+}
+
+.menu-mobile,
 .search-header {
     float: right;
     color: #fff;
     line-height: 46px;
     padding: 0 23px;
+
+
+}
+
+.menu-mobile:hover {
+    background-color: #ccc;
+    color: #000;
+    
 }
 
 .search-header:hover {
@@ -141,9 +163,9 @@ html {
 
 #sline {
     margin-top: 46px;
-   padding-top: 50%;
-   background: url(/asset/img/sline/sline1.jpg) top center / cover no-repeat;
-   position: relative;
+    padding-top: 50%;
+    background: url(/asset/img/sline/sline1.jpg) top center / cover no-repeat;
+    position: relative;
 }
 
 .content-sline {
@@ -162,14 +184,15 @@ html {
     margin-top: 24px;
 }
 
-#content {
-
-}
 
 #content .content-section {
     width: 800px;
+    max-width: 100%;
     margin: auto;
     padding: 64px 0;
+    padding-left: 16px;
+    padding-right: 16px;
+
 }
 
 #content .section-heading {
@@ -257,7 +280,7 @@ html {
 }
 
 .place-image:hover {
-   opacity: 0.6;
+    opacity: 0.6;
 }
 
 .place-body {
@@ -266,8 +289,7 @@ html {
     font-size: 15px;
 }
 
-.body-heading {
-}
+.body-heading {}
 
 .body-date {
     margin: 15px 0;
@@ -295,9 +317,7 @@ html {
 
 }
 
-#footer {
-
-}
+#footer {}
 
 .modal {
     align-items: center;
@@ -340,7 +360,7 @@ html {
 }
 
 .modal-header {
-    background-color: #009688   ;
+    background-color: #009688;
     height: 129px;
     display: flex;
     align-items: center;
@@ -402,7 +422,7 @@ html {
     font-size: 15px;
 }
 
-.form-control{
+.form-control {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
@@ -445,6 +465,7 @@ html {
     from {
         transform: translateY(-150px);
     }
+
     to {
         transform: translateY(0);
     }
